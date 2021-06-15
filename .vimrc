@@ -1,23 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""
-" Description:
-"   This is the .vimrc file
-"
-" Maintainer:
-"   melperri
-"   <melperri@student.42.fr
-"
-" Acknowledgements:
-"   Several elements of this .vimrc come from Kévin "Chewie" Sztern's config
-"   You can find it here: https://github.com/chewie/configs/
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"""""""""""""""""""""""""""""""""""""""""""""""""
-" General parameters 
-"""""""""""""""""""""""""""""""""""""""""""""""""
-
-"""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins 
-"""""""""""""""""""""""""""""""""""""""""""""""""
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -97,13 +78,17 @@ set wildmenu
 set wildmode=longest:full,list:full
 
 " Disable bell completely
-set visualbell
-set t_vb=
+"set visualbell
+"set t_vb=
+
+" Wrap on column 80
+set textwidth=80
 
 " Color the column after textwidth, usually th 80th
-if version >= 703
-    set colorcolumn=+1
-endif
+set colorcolumn=+1
+
+" Enable line wrapping
+set wrap
 
 " Display whitespace characters
 set list
@@ -121,12 +106,6 @@ set mouse=a
 
 "Briefly show matching braces, parens, etc
 set showmatch
-
-" Enable line wrapping
-set wrap
-
-" Wrap on column 80
-set textwidth=80
 
 " Disable preview window on completion
 set completeopt=longest,menuone
@@ -193,7 +172,7 @@ let g:jellybeans_overrides = {
 colorscheme jellybeans
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" Persistence options 
+" Persistence options
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Persistent undo
@@ -202,3 +181,27 @@ if version >= 703
     set undodir=~/.vim/undodir
     silent !mkdir -p ~/.vim/undodir
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mapping
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set "," as map leader
+let mapleader = ","
+
+" Map escape instead of capslock
+"noremap <capslock> <esc>
+
+" Disable arrow
+nnoremap <Left> :echo "No left for you!"<CR>
+vnoremap <Left> :echo "No left for you!"<CR>
+inoremap <Left> <nop>
+nnoremap <Right> :echo "No right for you!"<CR>
+vnoremap <Right> :echo "No right for you!"<CR>
+inoremap <Right>  <nop>
+nnoremap <Up> :echo "No up for you!"<CR>
+vnoremap <Up> :echo "No up for you!"<CR>
+inoremap <Up> <nop>
+nnoremap <Down> :echo "No down for you!"<CR>
+vnoremap <Down> :echo "No down for you!"<CR>
+inoremap <Down> <nop>
