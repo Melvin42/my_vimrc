@@ -28,7 +28,7 @@ Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Enable filetype detection for plugins and indentation options
-filetype plugin indent on
+filetype plugin on
 
 " Reload a file when it is changed from outside
 set autoread
@@ -136,25 +136,22 @@ set nohlsearch
 " The length of a tab
 " This is for documentation purposes only,
 " do not change the default value of 8, ever.
-set tabstop=8
+set tabstop=4 softtabstop=4
 
 " The number of spaces inserted/removed when using < or >
 set shiftwidth=4
 
 " The number of spaces inserted when you press tab.
 " -1 means the same value as shiftwidth
-set softtabstop=-1
-
-" Insert spaces instead of tabs
-set expandtab
 
 " When tabbing manually, use shiftwidth instead of tabstop and softtabstop
-set smarttab
+" set smarttab
 
 " Set basic indenting (i.e. copy the indentation of the previous line)
 " When filetype detection didn't find a fancy indentation scheme
-set autoindent
-"set smartindent
+"set autoindent
+
+set smartindent
 
 " Use a slightly darker background color to differentiate with the status line
 let g:jellybeans_overrides = {
