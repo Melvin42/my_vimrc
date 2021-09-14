@@ -67,7 +67,7 @@ set autoread
 
 " Write the file when we leave the buffer
 set autowrite
-
+"
 " Make backspace behave as expected
 set backspace=eol,indent,start
 
@@ -114,6 +114,16 @@ let mapleader = ","
 
 " Map escape instead of capslock
 "noremap <capslock> <esc>
+
+nnoremap <> :source ~/.vimrc<CR>
+
+" Comment line
+nnoremap <C-K> :s/^/\/\//<CR>
+
+" Search file wich contain word
+nnoremap <F4> :grep! "\<<cword>\>" . -r<CR>:copen<CR>
+" Uncomment line
+"nnoremap <C-S-k> :s/\/\///<CR>
 
 " Disable arrow
 nnoremap <Left> :echo "No left for you!"<CR>
